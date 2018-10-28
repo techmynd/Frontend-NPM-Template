@@ -1,0 +1,10 @@
+
+npm run build:js
+npm run build:js2folder
+
+build:js2folder will take all files from a folder and convert them to minified version and save to another folder
+not single files - this processes each file seperately
+
+folder conversion/minification
+https://stackoverflow.com/questions/17008472/how-to-minify-multiple-javascript-files-in-a-folder-with-uglifyjs
+

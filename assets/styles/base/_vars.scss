@@ -1,0 +1,154 @@
+// font-size of the root HTML element
+// set at 100% to leave default sizing (16px)
+// set to 62.5% to use a base font-size of 1rem = 10px (assuming default is 16px)
+// 62.5*16px/100 = 10px
+
+$root-font-size: 62.5%;
+
+$color-primary: #333;
+$color-secondary: #666;
+
+$color-black: #000;
+$color-white: #fff;
+
+$color-headings: #000;
+$color-links: #ff6600;
+$color-links-hover: #000;
+
+// === BACKGROUNDS ===
+	
+$bg-white: #fff;
+$bg-grey: #eee;
+$bg-black: #000;
+$body-background-color: #fff;
+
+// === LINE HEIGHTS ===
+
+$line-height-body: 1.2;
+$line-height-headings: 1.2;
+
+// === GUTTER ===
+
+$gutter: 1.5rem;
+$gutter-horizontal: 1.5rem;
+$gutter-vertical: 1.5rem;
+$gutter-section: 8rem;
+
+// === BORDERS ===
+
+$brd-radius: 0.3rem;
+$brd: 1px solid #eee;
+
+// === UTILTIES ===
+
+$content-width: 114rem; // 1140px/10 = 114rem
+$full-width: 100%;
+
+// === COLORS ===
+// All colour variable names should come from http://chir.ag/projects/name-that-color/
+
+/*
+$orange: #ffa600; 
+$grey: #f3f3f3; 
+$blue: #82d2e5;
+
+$color-primary: $orange;
+$color-secondary: $blue;
+$color-tertiary: $grey;
+
+$link-primary: $orange;
+$link-secondary: $blue;
+$link-tertiary: $grey;
+
+$primary-color: #333;
+$primary-color-light: #666;
+$primary-color-dark: #000;
+
+$secondary-color: #000;
+$secondary-color-light: #000;
+$secondary-color-dark: #000;
+
+$tertiary-color: #000;
+$tertiary-color-light: #000;
+$tertiary-color-dark: #000;
+
+*/
+
+// brand colours
+$c--brand-primary: #ff585d;
+$c--brand-secondary: #fe0;
+
+// greyscale
+$c--black: #1a1a1a;
+$c--grey-dark: #444;
+$c--grey: #888;
+$c--grey-light: #ddd;
+$c--grey-x-light: #fafafa;
+$c--white: #fff;
+
+// other colours
+$c--red: #f50023;
+$c--green: #24b35d;
+$c--blue: #4D90FE;
+
+// social colours
+$c--twitter: #55acee;
+$c--facebook: #3b5998;
+$c--youtube: #bb0000;
+$c--pinterest: #cb2027;
+$c--linkedin: #007bb5;
+$c--instagram: #8a3ab9;
+
+$box-shadow-black: 0 3rem 6rem rgba(0,0,0,0.1);
+$box-shadow-props: 0 3rem 6rem;
+
+/* usage
+.box {
+    box-shadow: $box-shadow-props rgba($primary-color, 0.1);
+}
+.box-2 {
+    box-shadow: 0 3rem 6rem rgba($primary-color, 0.1);
+}
+.box-3 {
+    box-shadow: $box-shadow-black;
+}
+*/
+
+$radius-button: 3px;
+$radius-tab: 3px;
+
+// basic spacing units
+$spacing-unit: rem(20px);
+$spacing-unit--x-small: rem(10px);
+$spacing-unit--small: rem(15px);
+$spacing-unit--medium: rem(30px);
+$spacing-unit--large: rem(40px);
+$spacing-unit--x-large: rem(60px);
+$rel-spacing-unit: 1em;
+$rel-spacing-unit--small: .5em;
+
+// weights
+$w--light: 300;
+$w--normal: 400;
+$w--semibold: 600;
+$w--bold: 700;
+$w--heavy: 800;
+
+$p: rem(16px);
+$p--small: rem(12px);
+$p--medium: rem(18px);
+$p--large: rem(24px);
+
+// line-height ratios
+$lh: 1.5;
+$lh--x-small: 1.1;
+$lh--small: 1.25;
+$lh--large: 1.75;
+
+// === SIZES ===
+$badge-custom-width: 40px;
+$badge-custom-height: 40px;
+
+$gutter-horizontal: 1rem; // 16px // 1 x 16
+$gutter-vertical: 1rem; // 16px // 1 x 16
+

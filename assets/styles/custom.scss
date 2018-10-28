@@ -1,0 +1,97 @@
+@import "vendors/bootstrap-4.min.css";
+@import "vendors/bootstrap-theme-4.min.css";
+@import "vendors/fontawesome-all-5.min.css";
+@import "vendors/ionicons.min.css";
+// @import "vendors/flexslider.css";
+@import "vendors/owl.carousel.min.css";
+@import "vendors/owl.theme.default.min.css";
+@import "vendors/animate.css";
+
+@import "base/vars";
+// @import "base/functions";
+@import "base/placeholders";
+@import "base/mixins";
+@import "base/typography";
+@import "base/animations";
+// @import "base/utilities";
+// set fonts path for fontawesome, bootstrap and sliders font files and images paths as well
+@import "base/fonts-path";
+
+@import "base/base";
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/nav";
+@import "layout/nav-secondary";
+@import "layout/cta";
+
+@import "components/buttons";
+@import "components/form";
+
+// @import "pages/home";
+
+html {
+  // root font
+  font-size: $root-font-size; // 1 rem = 10px & 10px/16px*100 = 62.5%
+  position: relative; 
+  min-height: 100%;
+}
+
+body {
+  color: $color-primary;
+  background-color: $body-background-color; 
+  font-size: 1.6rem; // 16px
+  font-family: $font-main;
+  line-height: 1.6;
+  width:100%; 
+  height:100%;
+  overflow-x: hidden;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+  @include mxn-selection {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+h2 {
+  font-size: 8rem;
+}
+h3 {font-size: 2.2rem;}
+h4 {font-size: 2rem;}
+h5 {font-size: 1.8rem;}
+h6 {font-size: 1.6rem;}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-headings;
+  color: $color-headings;
+  text-transform: uppercase;
+}
+
+a {
+    color: $color-links;
+    &:hover, &:focus, &:active, a:visited {
+      color: $color-links-hover;
+      text-decoration: none;
+    }
+    /*
+    &:first-child { }
+    &:last-child { }
+    */
+}
+
+.example-class ul li a { 
+  color: #eee;
+  &:not(:last-child) {
+      margin-right:10px;  
+  }
+}
+
+// if we use a variable inside calculation we use #{$varname}
+.col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+}
+

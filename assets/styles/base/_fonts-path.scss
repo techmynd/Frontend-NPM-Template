@@ -1,0 +1,151 @@
+// flex Slider fonts paths
+@font-face {
+  font-family: 'flexslider-icon';
+  src: url('../fonts/flexslider/flexslider-icon.eot');
+  src: url('../fonts/flexslider/flexslider-icon.eot?#iefix') format('embedded-opentype'), 
+  url('../fonts/flexslider/flexslider-icon.woff') format('woff'), 
+  url('../fonts/flexslider/flexslider-icon.ttf') format('truetype'), 
+  url('../fonts/flexslider/flexslider-icon.svg#flexslider-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// bootstrap 3 fonts paths
+@font-face {
+	font-family:'Glyphicons Halflings';
+    src:url('../fonts/bootstrap-3/glyphicons-halflings-regular.eot');
+    src:url('../fonts/bootstrap-3/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/bootstrap-3/glyphicons-halflings-regular.woff2') format('woff2'),
+    url('../fonts/bootstrap-3/glyphicons-halflings-regular.woff') format('woff'),
+    url('../fonts/bootstrap-3/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('../fonts/bootstrap-3/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+// Fontawesome 4 fonts paths
+@font-face {
+	font-family:'FontAwesome';
+	src:url('../fonts/fontawesome-4/fontawesome-webfont.eot?v=4.7.0');
+	src:url('../fonts/fontawesome-4/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+	url('../fonts/fontawesome-4/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+	url('../fonts/fontawesome-4/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+	url('../fonts/fontawesome-4/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+	url('../fonts/fontawesome-4/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+
+// Fontawesome 5 fonts paths
+@font-face { 
+	font-family:Font Awesome\ 5 Brands;
+	font-style:normal;
+	font-weight:400;
+	src:url('../fonts/fontawesome-5/fa-brands-400.eot');
+	src:url('../fonts/fontawesome-5/fa-brands-400.eot?#iefix') format("embedded-opentype"),
+	url('../fonts/fontawesome-5/fa-brands-400.woff2') format("woff2"),
+	url('../fonts/fontawesome-5/fa-brands-400.woff') format("woff"),
+	url('../fonts/fontawesome-5/fa-brands-400.ttf') format("truetype"),
+	url('../fonts/fontawesome-5/fa-brands-400.svg#fontawesome') format("svg");
+}
+@font-face { 
+	font-family:Font Awesome\ 5 Free;
+	font-style:normal;
+	font-weight:400;
+	src:url('../fonts/fontawesome-5/fa-regular-400.eot');
+	src:url('../fonts/fontawesome-5/fa-regular-400.eot?#iefix') format("embedded-opentype"),
+	url('../fonts/fontawesome-5/fa-regular-400.woff2') format("woff2"),
+	url('../fonts/fontawesome-5/fa-regular-400.woff') format("woff"),
+	url('../fonts/fontawesome-5/fa-regular-400.ttf') format("truetype"),
+	url('../fonts/fontawesome-5/fa-regular-400.svg#fontawesome') format("svg");
+}
+@font-face { 
+	font-family:Font Awesome\ 5 Free;
+	font-style:normal;
+	font-weight:900;
+	src:url('../fonts/fontawesome-5/fa-solid-900.eot');
+	src:url('../fonts/fontawesome-5/fa-solid-900.eot?#iefix') format("embedded-opentype"),
+	url('../fonts/fontawesome-5/fa-solid-900.woff2') format("woff2"),
+	url('../fonts/fontawesome-5/fa-solid-900.woff') format("woff"),
+	url('../fonts/fontawesome-5/fa-solid-900.ttf') format("truetype"),
+	url('../fonts/fontawesome-5/fa-solid-900.svg#fontawesome') format("svg");
+}
+
+// Ion Icons Paths
+@font-face { 
+	font-family:"Ionicons";
+	src:url("../fonts/ion-icons/ionicons.eot?v=4.0.0");
+	src:url("../fonts/ion-icons/ionicons.eot?v=4.0.0#iefix") format("embedded-opentype"),
+	url("../fonts/ion-icons/ionicons.woff2?v=4.0.0") format("woff2"),
+	url("../fonts/ion-icons/ionicons.woff?v=4.0.0") format("woff"),
+	url("../fonts/ion-icons/ionicons.ttf?v=4.0.0") format("truetype"),
+	url("../fonts/ion-icons/ionicons.svg?v=4.0.0#Ionicons") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+// Slick Slider fonts paths
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/slick/slick.eot');
+    src: url('../fonts/slick/slick.eot?#iefix') format('embedded-opentype'), 
+    url('../fonts/slick/slick.woff') format('woff'), 
+    url('../fonts/slick/slick.ttf') format('truetype'), 
+    url('../fonts/slick/slick.svg#slick') format('svg');
+}
+
+// Images paths
+
+.slick-loading .slick-list
+{
+    background: #fff url('../images/ajax-loader.gif') center center no-repeat;
+}
+// Vegas Slider Paths
+.vegas-overlay{
+	opacity:.5;
+	background: url('../images/02.png') center center;
+}
+
+// bx slider paths
+.bx-wrapper .bx-controls-auto .bx-stop { 
+	display:block;
+	text-indent:-9999px;
+	width:9px;
+	height:11px;
+	outline:0;
+	background:url('../images/controls.png') -86px -44px no-repeat;margin:0 3px;
+}
+.bx-wrapper .bx-prev{
+	left:10px;
+	background:url('../images/controls.png') 0 -32px no-repeat;
+}
+.bx-wrapper .bx-next { 
+	right:10px;
+	background:url('../images/controls.png') -43px -32px no-repeat;
+}
+.bx-wrapper .bx-controls-auto .bx-start { 
+	display:block;
+	text-indent:-9999px;
+	width:10px;
+	height:11px;
+	outline:0;
+	background:url('../images/controls.png') -86px -11px no-repeat;margin:0 3px;
+}
+
+// Owl Carousel paths
+.owl-carousel .owl-video-play-icon { 
+	position:absolute;
+	height:80px;
+	width:80px;
+	left:50%;
+	top:50%;
+	margin-left:-40px;
+	margin-top:-40px;
+	background:url('../images/owl.video.play.png') no-repeat;
+	cursor:pointer;
+	z-index:1;
+	-webkit-backface-visibility:hidden;
+	transition:transform .1s ease;
+}

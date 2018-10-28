@@ -1,0 +1,13 @@
+
+npm run watch:sass
+npm run compile:sass
+npm run prefix:css
+npm run compress:css
+npm run build:css
+
+
+final command to run all
+------------------------
+npm run build:css
+
+This will throw compiled and processed css files in build folder and in root folder

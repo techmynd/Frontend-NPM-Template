@@ -1,0 +1,17 @@
+{
+  "name": "JSProcessor",
+  "version": "1.0.0",
+  "description": "JS Processor and Minifier",
+  "main": "index.js",
+  "scripts": {
+    "build:js": "uglifyjs custom.js -c -m -o custom.min.js",
+    "build:js2folder": "uglifyjs-folder inputfolder -eo outputfolder"
+  },
+  "author": "Muhammad Javed Khalil",
+  "license": "ISC",
+  "devDependencies": {
+    "uglify-js": "^3.4.9",
+    "uglifyjs-folder": "^1.5.1"
+  },
+  "dependencies": {}
+}

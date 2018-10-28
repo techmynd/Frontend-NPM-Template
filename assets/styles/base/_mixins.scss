@@ -1,0 +1,378 @@
+/*position: relative;*/
+@mixin mxn-relative {
+	position: relative;
+}
+/*absolute center content*/
+@mixin mxn-absolute-center {
+    position: absolute;
+    top:50%; 
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -k-transform: translate(-50%,-50%);
+}
+/* usage
+.class-name {
+    @include mxn-absolute-center;
+}
+*/
+/*background image*/
+@mixin mxn-bg-cover-image {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* usage
+.class-name {
+    @include mxn-bg-cover-image;
+    background-image: url('../assets/images/img.jpg');
+}
+*/
+@mixin mxn-box-shadow ($shadow...) {
+    box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+}
+/* usage
+.shadowed-box {
+    @include mxn-box-shadow (1px 1px 10px #000);
+}
+*/
+@mixin keyframes( $name ) {
+      @-webkit-keyframes #{ $name } {
+            @content;
+      }
+      @-moz-keyframes #{ $name } {
+            @content;
+      }
+      @-o-keyframes #{ $name } {
+            @content;
+      }
+      @keyframes #{ $name } {
+            @content;
+      }
+}
+/*
+.class {
+    @include mxn-absolute-center;
+    @include mxn-relative;
+}
+.shadowed-box {
+    @include mxn-box-shadow (1px 1px 10px rgba(0,0,0,0.5));
+}
+@include keyframes( myAnim ) {
+      0% { opacity: 0; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+}
+*/
+
+/* Clearfix
+-------------------------------------------*/
+@mixin cf {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/* Border Radius
+-------------------------------------------*/
+@mixin mxn-rounded ($radius) {
+    border-radius: $radius;
+}
+/*usage
+.some-box {
+    @include mxn-rounded (3px);
+}
+*/
+
+/* z-index
+-------------------------------------------*/
+@mixin mxn-zindex ($depth:1) {
+    z-index: $depth;
+}
+/* usage
+.box2 {
+    @include mxn-zindex(2); // .. other properties
+}
+*/
+
+/* Border and Radius
+-------------------------------------------*/
+@mixin mxn-border-and-radius ($radius, $border) {
+    border-radius: $radius;
+    border: $border;
+}
+/* usage
+.bordered-box-green {
+    @include mxn-border-and-radius (10px, 1px solid #098509);
+    background-color: #098509;
+}
+*/
+
+/* Rounded Corners
+-------------------------------------------*/
+@mixin mxn-rounded-corner($arc) {
+    -moz-border-radius: $arc;
+    -webkit-border-radius: $arc;
+    border-radius: $arc;  
+}
+/*
+.tab-button {
+     @include mxn-rounded-corner(3px); 
+}
+*/
+
+/* Selection BG
+-------------------------------------------*/
+@mixin mxn-selection {
+    ::-moz-selection { @content; }
+    ::selection { @content; }
+}
+
+/* Show/Hide
+-------------------------------------------*/
+@mixin mxn-hidden {
+  display: none !important;
+}
+
+@mixin mxn-show {
+    display: block !important;
+}
+
+@mixin mxn-show-inline {
+    display: inline-block !important;
+}
+
+/* Form Placeholder
+-------------------------------------------*/
+@mixin mxn-form-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+/* usage
+  input,
+  textarea {
+    @include mxn-input-placeholder {
+      color: $grey;
+    }
+  }
+*/
+
+/* Triangle / tips for boxes etc
+-------------------------------------------*/
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+
+  @if $round {
+    border-radius: 3px;
+  }
+
+  @if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round( $size / 2.5 );
+  } @else if $direction == up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  } @else if  $direction == left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}
+
+/* usage
+  .element {
+    &::before {
+      @include css-triangle(blue, down);
+    }
+  }
+*/
+
+/* FontAwesome
+-------------------------------------------*/
+// fontawesome 4
+@mixin mxn-fa4-icon-attach {
+  font-family: "FontAwesome";
+  position: absolute;
+}
+
+// fontawesome 5 free
+@mixin mxn-fa5-free-icon-attach {
+  //font-family: "Font Awesome 5 Free";
+  // for cross browser issue, use 
+  font-family: 'Font Awesome\ 5 Free';
+  position: absolute;
+  font-weight: 900; // weight is necessary for psudo elements for fa5
+}
+
+// fontawesome 5 pro
+@mixin mxn-fa5-pro-icon-attach {
+  //font-family: "Font Awesome 5 Pro";
+  font-family: 'Font Awesome\ 5 Pro';
+  position: absolute;
+  font-weight: 900;
+}
+/* usage
+.box::after {
+    @include fa4-icon-attach;
+    content: "\f007";
+    top: 0;
+    left: 0;
+}
+*/
+
+/* Select appearance
+-------------------------------------------*/
+@mixin mxn-appearance-none($val: none) {
+  -webkit-appearance: $val;
+  -moz-appearance: $val;
+  appearance: $val;
+}
+
+/* Backface visibility
+-------------------------------------------*/
+// choose higher perspective and readjust it
+@mixin mxn-hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+
+/* Pseudo element
+-------------------------------------------*/
+@mixin mxn-pseudo($display: inline-block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+/* Disable
+-------------------------------------------*/
+@mixin mxn-unselectable {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* Button Background
+-------------------------------------------*/
+@mixin  mxn-btn-background($btn-background) {
+    // for %btn , see _placeholder
+    @extend %btn;
+    background-color: $btn-background;
+    &:hover {
+        background-color: lighten($btn-background,10%);
+    }
+}
+
+/*
+.cta-btn {
+    @include btn-background(#666);
+}
+*/
+
+/* Entend 
+-------------------------------------------*/
+/*
+@mixin animal {
+    background: gray;
+    border: 1px solid red;
+    font-weight: bold;
+    font-size: 50px;
+    color: red;
+    padding: 20px;
+}
+.cat {
+    @include animal;
+    color: white;
+}
+.dog {
+    @include animal;
+    color: black;
+}
+*/
+
+/* Only Browser Specific - IE6
+-------------------------------------------*/
+@mixin mxn-for-ie-6 {
+    // only apply to ie6 - * html is for ie6
+    * html {
+        @content;
+    }
+}
+/* usage
+@include for-ie-6 {
+    .some-class {
+        font-size: 120%;
+    }
+}
+*/
+
+/* WARNING ERROR SUCCESS MIXINS
+-------------------------------------------*/
+/*
+@mixin mxn-warning {
+    background-color: #da9412;
+    color: #fff;
+}
+
+@mixin mxn-error {
+    background-color: #aa0909;
+    color: #fff;
+}
+
+// ==== nested mixin
+@mixin mxn-error-block {
+    @include mxn-error;
+    font-weight: bold;
+    position: relative;
+}
+
+.btn-warning {
+    @include mxn-warning;
+    font-size: 14px;
+}
+
+.btn-error {
+    @include mxn-error;
+    font-size: 14px;
+}
+
+.error-block {
+    @include mxn-error-block;
+    border-radius: 4px;
+    border: 1px solid #000;
+}
+*/

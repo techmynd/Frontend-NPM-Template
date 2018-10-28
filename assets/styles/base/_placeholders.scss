@@ -1,0 +1,70 @@
+%placeholder-btn {
+	color: #fff;
+	padding: 10px;	
+	display: inline-block;
+	text-align: center;
+	border-radius: 100px;
+}
+
+// copy placeholder values to button and its link satte and change hover state and change the bg colors in those extra states only
+.btn-main {
+		@extend %placeholder-btn;
+	&:link {
+		@extend %placeholder-btn;
+		background-color: $color-black;
+	}
+	&:hover, &:focus {
+		@extend %placeholder-btn;
+		background-color: $color-primary;
+	}	
+}
+
+%bg-img {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* usage
+.image-one {
+    @extend %bg-img;
+    background-image:url(../assets/images/img.jpg");
+}
+*/
+
+%btn {
+    padding: 10px 40px;
+    color:#fff;
+    curser: pointer;
+    border: none;
+    shadow: none;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+}
+/* usage
+.class { 
+	@extend %btn;
+}
+*/
+
+%btn-placeholder {
+	color: #fff;
+	padding: 10px;	
+	display: inline-block;
+	text-align: center;
+	border-radius: 100px;
+}
+/* usage
+.some-btn-main {
+		@extend %btn-placeholder;
+	&:link {
+		@extend %btn-placeholder;
+		background-color: $color-primary;
+	}
+	&:hover, &:focus {
+		@extend %btn-placeholder;
+		background-color: $color-secondary;
+	}	
+}
+*/

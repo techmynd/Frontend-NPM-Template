@@ -1,0 +1,21 @@
+{
+  "name": "CSSProcessor",
+  "version": "1.0.0",
+  "description": "CSS Processor, Prefixer and Minifier",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass custom.scss build/custom.css",
+    "compile:css": "sass custom.scss:custom.css --style expanded",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" custom.css -o build/custom.prefixed.css",
+    "compress:css": "node-sass build/custom.prefixed.css custom.min.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass compile:css prefix:css compress:css"
+  },
+  "author": "Muhammad Javed Khalil",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1"
+  }
+}

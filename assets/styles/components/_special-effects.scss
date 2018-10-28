@@ -1,0 +1,23 @@
+// text color fading away from top to bottom
+.txt-color-fade-down {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	-moz-background-clip: text;
+	-o-background-clip: text;
+	-ms-background-clip: text;
+	color: transparent;
+	background-image: linear-gradient(to bottom, rgba(black, 1), rgba(black, 0.2));
+}
+
+// Two colored text - gradient from left to right
+.txt-colored-left-to-right {
+	background-image: linear-gradient(to right, #7ed56f, #28b485);
+	background-image: -webkit-linear-gradient(to right, #7ed56f, #28b485);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-moz-background-clip: text;
+	-o-background-clip: text;
+	-ms-background-clip: text;
+	color: transparent;
+}
