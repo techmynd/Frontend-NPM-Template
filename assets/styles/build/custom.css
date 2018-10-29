@@ -5,43 +5,6 @@
 @import url(vendors/owl.carousel.min.css);
 @import url(vendors/owl.theme.default.min.css);
 @import url(vendors/animate.css);
-/*
-$orange: #ffa600; 
-$grey: #f3f3f3; 
-$blue: #82d2e5;
-
-$color-primary: $orange;
-$color-secondary: $blue;
-$color-tertiary: $grey;
-
-$link-primary: $orange;
-$link-secondary: $blue;
-$link-tertiary: $grey;
-
-$primary-color: #333;
-$primary-color-light: #666;
-$primary-color-dark: #000;
-
-$secondary-color: #000;
-$secondary-color-light: #000;
-$secondary-color-dark: #000;
-
-$tertiary-color: #000;
-$tertiary-color-light: #000;
-$tertiary-color-dark: #000;
-
-*/
-/* usage
-.box {
-    box-shadow: $box-shadow-props rgba($primary-color, 0.1);
-}
-.box-2 {
-    box-shadow: 0 3rem 6rem rgba($primary-color, 0.1);
-}
-.box-3 {
-    box-shadow: $box-shadow-black;
-}
-*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900|Open+Sans:300,400,600,700,800");
 .btn-main, .btn-main:link, .btn-main:hover, .btn-main:focus {
   color: #fff;
@@ -56,212 +19,6 @@ $tertiary-color-dark: #000;
 .btn-main:hover, .btn-main:focus {
   background-color: #333; }
 
-/* usage
-.image-one {
-    @extend %bg-img;
-    background-image:url(../assets/images/img.jpg");
-}
-*/
-/* usage
-.class { 
-	@extend %btn;
-}
-*/
-/* usage
-.some-btn-main {
-		@extend %btn-placeholder;
-	&:link {
-		@extend %btn-placeholder;
-		background-color: $color-primary;
-	}
-	&:hover, &:focus {
-		@extend %btn-placeholder;
-		background-color: $color-secondary;
-	}	
-}
-*/
-/*position: relative;*/
-/*absolute center content*/
-/* usage
-.class-name {
-    @include mxn-absolute-center;
-}
-*/
-/*background image*/
-/* usage
-.class-name {
-    @include mxn-bg-cover-image;
-    background-image: url('../assets/images/img.jpg');
-}
-*/
-/* usage
-.shadowed-box {
-    @include mxn-box-shadow (1px 1px 10px #000);
-}
-*/
-/*
-.class {
-    @include mxn-absolute-center;
-    @include mxn-relative;
-}
-.shadowed-box {
-    @include mxn-box-shadow (1px 1px 10px rgba(0,0,0,0.5));
-}
-@include keyframes( myAnim ) {
-      0% { opacity: 0; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-}
-*/
-/* Clearfix
--------------------------------------------*/
-/* Border Radius
--------------------------------------------*/
-/*usage
-.some-box {
-    @include mxn-rounded (3px);
-}
-*/
-/* z-index
--------------------------------------------*/
-/* usage
-.box2 {
-    @include mxn-zindex(2); // .. other properties
-}
-*/
-/* Border and Radius
--------------------------------------------*/
-/* usage
-.bordered-box-green {
-    @include mxn-border-and-radius (10px, 1px solid #098509);
-    background-color: #098509;
-}
-*/
-/* Rounded Corners
--------------------------------------------*/
-/*
-.tab-button {
-     @include mxn-rounded-corner(3px); 
-}
-*/
-/* Selection BG
--------------------------------------------*/
-/* Show/Hide
--------------------------------------------*/
-/* Form Placeholder
--------------------------------------------*/
-/* usage
-  input,
-  textarea {
-    @include mxn-input-placeholder {
-      color: $grey;
-    }
-  }
-*/
-/* Triangle / tips for boxes etc
--------------------------------------------*/
-/* usage
-  .element {
-    &::before {
-      @include css-triangle(blue, down);
-    }
-  }
-*/
-/* FontAwesome
--------------------------------------------*/
-/* usage
-.box::after {
-    @include fa4-icon-attach;
-    content: "\f007";
-    top: 0;
-    left: 0;
-}
-*/
-/* Select appearance
--------------------------------------------*/
-/* Backface visibility
--------------------------------------------*/
-/* Pseudo element
--------------------------------------------*/
-/* Disable
--------------------------------------------*/
-/* Button Background
--------------------------------------------*/
-/*
-.cta-btn {
-    @include btn-background(#666);
-}
-*/
-/* Entend 
--------------------------------------------*/
-/*
-@mixin animal {
-    background: gray;
-    border: 1px solid red;
-    font-weight: bold;
-    font-size: 50px;
-    color: red;
-    padding: 20px;
-}
-.cat {
-    @include animal;
-    color: white;
-}
-.dog {
-    @include animal;
-    color: black;
-}
-*/
-/* Only Browser Specific - IE6
--------------------------------------------*/
-/* usage
-@include for-ie-6 {
-    .some-class {
-        font-size: 120%;
-    }
-}
-*/
-/* WARNING ERROR SUCCESS MIXINS
--------------------------------------------*/
-/*
-@mixin mxn-warning {
-    background-color: #da9412;
-    color: #fff;
-}
-
-@mixin mxn-error {
-    background-color: #aa0909;
-    color: #fff;
-}
-
-// ==== nested mixin
-@mixin mxn-error-block {
-    @include mxn-error;
-    font-weight: bold;
-    position: relative;
-}
-
-.btn-warning {
-    @include mxn-warning;
-    font-size: 14px;
-}
-
-.btn-error {
-    @include mxn-error;
-    font-size: 14px;
-}
-
-.error-block {
-    @include mxn-error-block;
-    border-radius: 4px;
-    border: 1px solid #000;
-}
-*/
-/*
-	Easing/Timing
-*/
-/*================ Animation related mixins ================*/
-/*================ Animations and keyframes ================*/
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -739,7 +496,6 @@ $tertiary-color-dark: #000;
   font-weight: normal;
   font-style: normal; }
 
-/* Icons */
 @font-face {
   font-family: 'slick';
   font-weight: normal;
@@ -907,7 +663,6 @@ button:focus, .btn:focus, a:focus, input:focus, .form-control:focus {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%); }
 
-/*vertically centered content in grid*/
 .row-flex, .center-middle {
   display: flex;
   flex-direction: row;
@@ -1023,8 +778,6 @@ form {
 .full-left-side {
   padding-left: 0; }
 
-/*#############################################*/
-/*responsive image boxes for grid - small grid*/
 .grid-img-box-sm {
   height: 80px;
   line-height: 70px;
@@ -1046,7 +799,6 @@ form {
   display: inline-block !important;
   max-width: 100%; }
 
-/*responsive image boxes for grid - medium grid*/
 .grid-img-box-md {
   height: 160px;
   line-height: 150px;
@@ -1068,7 +820,6 @@ form {
   display: inline-block !important;
   max-width: 100%; }
 
-/*responsive image boxes for grid - large grid*/
 .grid-img-box-lg {
   height: 500px;
   line-height: 490px;
@@ -1090,7 +841,6 @@ form {
   display: inline-block !important;
   max-width: 100%; }
 
-/*responsive image boxes for grid - table method*/
 .grid-tbl {
   display: table;
   width: 100%;
@@ -1116,7 +866,6 @@ form {
   display: inline-block !important;
   max-width: 100%; }
 
-/*#############################################*/
 html {
   font-size: 62.5%;
   position: relative;
@@ -1165,11 +914,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase; }
 
 a {
-  color: #ff6600;
-  /*
-    &:first-child { }
-    &:last-child { }
-    */ }
+  color: #ff6600; }
   a:hover, a:focus, a:active, a a:visited {
     color: #000;
     text-decoration: none; }

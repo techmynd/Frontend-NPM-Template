@@ -1,8 +1,13 @@
-/*position: relative;*/
+// position: relative;
 @mixin mxn-relative {
 	position: relative;
 }
-/*absolute center content*/
+// == usage
+// .class-name {
+//     @include mxn-relative;
+// }
+
+// absolute center content
 @mixin mxn-absolute-center {
     position: absolute;
     top:50%; 
@@ -14,35 +19,35 @@
     -o-transform: translate(-50%,-50%);
     -k-transform: translate(-50%,-50%);
 }
-/* usage
-.class-name {
-    @include mxn-absolute-center;
-}
-*/
-/*background image*/
+// == usage
+// .class-name {
+//     @include mxn-absolute-center;
+// }
+
+// background image
 @mixin mxn-bg-cover-image {
     width: 100%;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-/* usage
-.class-name {
-    @include mxn-bg-cover-image;
-    background-image: url('../assets/images/img.jpg');
-}
-*/
+// == usage
+// .class-name {
+//     @include mxn-bg-cover-image;
+//     background-image: url('../assets/images/img.jpg');
+// }
+
 @mixin mxn-box-shadow ($shadow...) {
     box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     -webkit-box-shadow: $shadow;
     -ms-box-shadow: $shadow;
 }
-/* usage
-.shadowed-box {
-    @include mxn-box-shadow (1px 1px 10px #000);
-}
-*/
+// == usage
+// .shadowed-box {
+//     @include mxn-box-shadow (1px 1px 10px #000);
+// }
+
 @mixin keyframes( $name ) {
       @-webkit-keyframes #{ $name } {
             @content;
@@ -57,23 +62,23 @@
             @content;
       }
 }
-/*
-.class {
-    @include mxn-absolute-center;
-    @include mxn-relative;
-}
-.shadowed-box {
-    @include mxn-box-shadow (1px 1px 10px rgba(0,0,0,0.5));
-}
-@include keyframes( myAnim ) {
-      0% { opacity: 0; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-}
-*/
+// == usage
+// .class {
+//     @include mxn-absolute-center;
+//     @include mxn-relative;
+// }
+// .shadowed-box {
+//     @include mxn-box-shadow (1px 1px 10px rgba(0,0,0,0.5));
+// }
+// @include keyframes( myAnim ) {
+//       0% { opacity: 0; }
+//       50% { opacity: 0.5; }
+//       100% { opacity: 1; }
+// }
 
-/* Clearfix
--------------------------------------------*/
+
+// Clearfix
+// -------------------------------------------
 @mixin cf {
   &::after {
     content: '';
@@ -90,63 +95,61 @@
   }
 }
 
-/* Border Radius
--------------------------------------------*/
+// Border Radius
+// -------------------------------------------
 @mixin mxn-rounded ($radius) {
     border-radius: $radius;
 }
-/*usage
-.some-box {
-    @include mxn-rounded (3px);
-}
-*/
+// == usage
+// .some-box {
+//     @include mxn-rounded (3px);
+// }
 
-/* z-index
--------------------------------------------*/
+// z-index
+// -------------------------------------------
 @mixin mxn-zindex ($depth:1) {
     z-index: $depth;
 }
-/* usage
-.box2 {
-    @include mxn-zindex(2); // .. other properties
-}
-*/
+// == usage
+// .box2 {
+//     @include mxn-zindex(2); // .. other properties
+// }
 
-/* Border and Radius
--------------------------------------------*/
+// Border and Radius
+// -------------------------------------------
 @mixin mxn-border-and-radius ($radius, $border) {
     border-radius: $radius;
     border: $border;
 }
-/* usage
-.bordered-box-green {
-    @include mxn-border-and-radius (10px, 1px solid #098509);
-    background-color: #098509;
-}
-*/
+// == usage
+// .bordered-box-green {
+//     @include mxn-border-and-radius (10px, 1px solid #098509);
+//     background-color: #098509;
+// }
 
-/* Rounded Corners
--------------------------------------------*/
+
+// Rounded Corners
+// -------------------------------------------
 @mixin mxn-rounded-corner($arc) {
     -moz-border-radius: $arc;
     -webkit-border-radius: $arc;
     border-radius: $arc;  
 }
-/*
-.tab-button {
-     @include mxn-rounded-corner(3px); 
-}
-*/
+// == usage
+// .tab-button {
+//      @include mxn-rounded-corner(3px); 
+// }
 
-/* Selection BG
--------------------------------------------*/
+
+//  Selection BG
+// -------------------------------------------
 @mixin mxn-selection {
     ::-moz-selection { @content; }
     ::selection { @content; }
 }
 
-/* Show/Hide
--------------------------------------------*/
+//  Show/Hide
+// -------------------------------------------
 @mixin mxn-hidden {
   display: none !important;
 }
@@ -159,8 +162,8 @@
     display: inline-block !important;
 }
 
-/* Form Placeholder
--------------------------------------------*/
+// Form Placeholder
+// -------------------------------------------
 @mixin mxn-form-placeholder {
   &.placeholder { @content; }
   &:-moz-placeholder { @content; }
@@ -169,17 +172,17 @@
   &::-webkit-input-placeholder { @content; }
 }
 
-/* usage
-  input,
-  textarea {
-    @include mxn-input-placeholder {
-      color: $grey;
-    }
-  }
-*/
+// == usage
+  // input,
+  // textarea {
+  //   @include mxn-input-placeholder {
+  //     color: $grey;
+  //   }
+  // }
 
-/* Triangle / tips for boxes etc
--------------------------------------------*/
+
+// Triangle / tips for boxes etc
+// -------------------------------------------
 @mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
   @include pseudo($pos: $position);
   width: 0;
@@ -211,17 +214,15 @@
     margin-left: -$size;
   }
 }
+// == usage
+  // .element {
+  //   &::before {
+  //     @include css-triangle(blue, down);
+  //   }
+  // }
 
-/* usage
-  .element {
-    &::before {
-      @include css-triangle(blue, down);
-    }
-  }
-*/
-
-/* FontAwesome
--------------------------------------------*/
+// FontAwesome
+// -------------------------------------------
 // fontawesome 4
 @mixin mxn-fa4-icon-attach {
   font-family: "FontAwesome";
@@ -230,7 +231,7 @@
 
 // fontawesome 5 free
 @mixin mxn-fa5-free-icon-attach {
-  //font-family: "Font Awesome 5 Free";
+  // font-family: "Font Awesome 5 Free";
   // for cross browser issue, use 
   font-family: 'Font Awesome\ 5 Free';
   position: absolute;
@@ -244,25 +245,24 @@
   position: absolute;
   font-weight: 900;
 }
-/* usage
-.box::after {
-    @include fa4-icon-attach;
-    content: "\f007";
-    top: 0;
-    left: 0;
-}
-*/
+// == usage
+// .box::after {
+//     @include fa4-icon-attach;
+//     content: "\f007";
+//     top: 0;
+//     left: 0;
+// }
 
-/* Select appearance
--------------------------------------------*/
+//  Select appearance
+// -------------------------------------------
 @mixin mxn-appearance-none($val: none) {
   -webkit-appearance: $val;
   -moz-appearance: $val;
   appearance: $val;
 }
 
-/* Backface visibility
--------------------------------------------*/
+//  Backface visibility
+// -------------------------------------------
 // choose higher perspective and readjust it
 @mixin mxn-hardware($backface: true, $perspective: 1000) {
   @if $backface {
@@ -271,23 +271,23 @@
   perspective: $perspective;
 }
 
-/* Pseudo element
--------------------------------------------*/
+// Pseudo element
+// -------------------------------------------
 @mixin mxn-pseudo($display: inline-block, $pos: absolute, $content: ''){
   content: $content;
   display: $display;
   position: $pos;
 }
 
-/* Disable
--------------------------------------------*/
+// Disable
+// -------------------------------------------
 @mixin mxn-unselectable {
   -webkit-touch-callout: none;
   user-select: none;
 }
 
-/* Button Background
--------------------------------------------*/
+// Button Background
+// -------------------------------------------
 @mixin  mxn-btn-background($btn-background) {
     // for %btn , see _placeholder
     @extend %btn;
@@ -297,82 +297,78 @@
     }
 }
 
-/*
-.cta-btn {
-    @include btn-background(#666);
-}
-*/
+// == usage 
+// .cta-btn {
+//     @include btn-background(#666);
+// }
 
-/* Entend 
--------------------------------------------*/
-/*
-@mixin animal {
-    background: gray;
-    border: 1px solid red;
-    font-weight: bold;
-    font-size: 50px;
-    color: red;
-    padding: 20px;
-}
-.cat {
-    @include animal;
-    color: white;
-}
-.dog {
-    @include animal;
-    color: black;
-}
-*/
 
-/* Only Browser Specific - IE6
--------------------------------------------*/
+// Entend 
+// -------------------------------------------
+// @mixin animal {
+//     background: gray;
+//     border: 1px solid red;
+//     font-weight: bold;
+//     font-size: 50px;
+//     color: red;
+//     padding: 20px;
+// }
+// .cat {
+//     @include animal;
+//     color: white;
+// }
+// .dog {
+//     @include animal;
+//     color: black;
+// }
+
+// Only Browser Specific - IE6
+// -------------------------------------------
 @mixin mxn-for-ie-6 {
     // only apply to ie6 - * html is for ie6
     * html {
         @content;
     }
 }
-/* usage
-@include for-ie-6 {
-    .some-class {
-        font-size: 120%;
-    }
-}
-*/
+// == usage
+// @include for-ie-6 {
+//     .some-class {
+//         font-size: 120%;
+//     }
+// }
 
-/* WARNING ERROR SUCCESS MIXINS
--------------------------------------------*/
-/*
-@mixin mxn-warning {
-    background-color: #da9412;
-    color: #fff;
-}
+// WARNING ERROR SUCCESS MIXINS
+// -------------------------------------------
 
-@mixin mxn-error {
-    background-color: #aa0909;
-    color: #fff;
-}
+// @mixin mxn-warning {
+//     background-color: #da9412;
+//     color: #fff;
+// }
+
+// @mixin mxn-error {
+//     background-color: #aa0909;
+//     color: #fff;
+// }
 
 // ==== nested mixin
-@mixin mxn-error-block {
-    @include mxn-error;
-    font-weight: bold;
-    position: relative;
-}
+// @mixin mxn-error-block {
+//     @include mxn-error;
+//     font-weight: bold;
+//     position: relative;
+// }
 
-.btn-warning {
-    @include mxn-warning;
-    font-size: 14px;
-}
+// .btn-warning {
+//     @include mxn-warning;
+//     font-size: 14px;
+// }
 
-.btn-error {
-    @include mxn-error;
-    font-size: 14px;
-}
+// .btn-error {
+//     @include mxn-error;
+//     font-size: 14px;
+// }
 
-.error-block {
-    @include mxn-error-block;
-    border-radius: 4px;
-    border: 1px solid #000;
-}
-*/
+// .error-block {
+//     @include mxn-error-block;
+//     border-radius: 4px;
+//     border: 1px solid #000;
+// }

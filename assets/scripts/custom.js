@@ -1,26 +1,61 @@
-$(document).ready(function() {
+//$.noConflict();
+var $ = jQuery.noConflict();
+jQuery(window).on('load',function($) {
+  // code here
+  // $('body').fadeIn();
+});
+
+/*if window is resized - check*/
+jQuery(window).on('resize',function($){
+  // code here
+  shiftColsLeftRight();
+
+  // window width height now
+  windowHeightNow = jQuery(window).height();
+  windowWidthNow = jQuery(window).width();
+
+});
+
+jQuery(document).ready(function($) {
 
   shiftColsLeftRight();
+
+  $('table tr:even').addClass("even");
+  $('table tr:odd').addClass("odd");
+
+  $('ul li:even').addClass("even");
+  $('ul li:odd').addClass("odd");
+
+  // initial window width height
+  windowHeightInitial = jQuery(window).height();
+  windowWidthInitial = jQuery(window).width();
+
+  //add defer if its not in script tag  
+  $('script').each(function(){
+    if( !$(this).attr('defer') || $(this).attr('defer', '') ) {
+       $(this).attr('defer', 'defer');
+    }
+  });
+  //end
+  
+  //add clas and number, unique identifier to each element
+  $('ul li').addClass(function(index) {
+    $(this).addClass("list-item-" + index);
+  });
+
+  // secondary nav move
+  // $('.secondary-nav').animate({ 'margin-left': '+=200px', 'opacity': '0.5' }, 1000 );
+  
+  // time // set interval or set timeout
+    // setInterval('doSomethingPeriodically()', 1000);  
+    // setTimeout('doSomethingAfterFiveSeconds()', 5000);
+  // or
 
   /*just toggle*/
   $('.toggleTrigger').click(function(event) {
     event.preventDefault();
     $('.toggleWrap').slideToggle();
   });
-
-  /*Collapsable*/
-  // $(".collapsable h3").on('click', function(event){
-  //   event.preventDefault();
-  //   $(this).closest('.collapsable').find('.collapse').stop().slideToggle('fast');
-  //   $(this).closest('.collapsable').find('.h3 span').stop().toggleClass('fa-angle-down fa-angle-up');
-  // });
-
-  /*Categories Panel Collapsable*/
-  // $(".collapsable a").on('click', function(event){
-  //   event.preventDefault();
-  //   $(this).closest('.collapsable').find('.nav-tab-line').stop().slideToggle('fast');
-  //   $(this).closest('.collapsable').find('.check-circle span').stop().toggleClass('fa-angle-right fa-angle-down');
-  // });
 
   // collapsable widgets // with single function
   $('.widget-expandable .title a').on('click', function(event){
@@ -43,13 +78,79 @@ $(document).ready(function() {
     $(this).closest('.collapsable').find('a .fa').stop().toggleClass('fa-angle-right fa-angle-down');
   });
   // categories collapse ends
-
-});
-
-
-
-$(window).on('load',function() {
   
+  /* animate to top */
+  //$('.top').click(function () {$('body,html').animate({scrollTop: 0}, 800,'easeInOutExpo');
+  //    return false;
+  //});
+  $('.scrollTop').click(function(event){
+    event.preventDefault();
+    $('body,html').animate({ scrollTop:0 }, 800, 'easeOutExpo');
+  });
+
+  // bootstrap accordian - toggle icons
+  var selectIds = $('#collapseOne,#collapseTwo,#collapseThree,.panel-collapse');
+  $(function ($) {
+      selectIds.on('show.bs.collapse hidden.bs.collapse', function () {
+          $(this).prev().find('.fa').toggleClass('fa-plus fa-minus');
+          $(this).prev().find('.icon').toggleClass('ion-ios-add ion-ios-remove');
+          $(this).prev().find('.icnc').toggleClass('ion-ios-add-circle-outline ion-ios-remove-circle-outline');
+      });
+  });
+  // bootstrap accordian - toggle icons
+
+  /////// Bootstrap Accordian FIX - move control to the top of opened tab - onclick - start
+  $('#accordion').on('shown.bs.collapse', function (e) {
+
+    // Validate this panel belongs to this accordian, and not an embedded one
+    var actualAccordianId = $('a[href="#' + $(e.target).attr('id') + '"').data('parent');
+    var targetAccordianId = '#' + $(this).attr('id');
+    if (actualAccordianId !== targetAccordianId) return;
+
+    var clickedHeader = $(this).find('.panel > .collapse.in').closest('.panel').find('.panel-heading');
+    var offset = clickedHeader.offset();
+    var top = $(window).scrollTop();
+    if(offset) {
+      var topOfHeader = offset.top;
+      if(topOfHeader < top) {
+        $('html,body').animate({ scrollTop: topOfHeader}, 400, 'swing');
+      }
+    }
+  });
+  /////// Bootstrap Accordian FIX - move control to the top of opened tab - onclick - end
+  
+  // animate numbers // count number to its original value // number counter // number animator
+  // just add .counter class to a div / span that contains a number
+  /*
+  $('.counter').each(function(){
+      $(this).prop('NumberUp', 0).animate({
+        NumberUp: $(this).text()
+      }, {
+        duration: 2000,
+        easing: 'easeOutExpo', 
+        step: function (now) {
+          $(this).text(Math.ceil(now));
+        }
+      });
+  });
+  */
+
+  /*
+  $('.down').click(function(event){
+    event.preventDefault();
+    $('.slide1').slideDown(800, 'easeInOutExpo');
+  });
+  */
+ 
+  // this toggleclass / not this remove class
+  // remove class from siblings that not not quite siblings but toggle class on this
+  /*
+  $('.choose-metal-wrap .metal-box').click(function(){
+      $('.choose-metal-wrap .metal-box').not(this).removeClass('active');
+      $(this).toggleClass('active');
+  });
+  */
+
 });
 
 // wow animation
@@ -69,8 +170,6 @@ var wow = new WOW(
 );
 wow.init();
 
-
-
 /*Plain JS*/
 
 /*Year for Footer*/
@@ -80,23 +179,40 @@ function showCurrentYear() {
 }
 document.getElementById("yearJS").innerHTML = showCurrentYear();
 
-/*if window is resized - check*/
-$(window).resize(function(){
-  // code here
-});
+
+// FUNCTIONS //
+
+// shift columns for small screen
+function shiftColsLeftRight() {
+    if( jQuery(window).width() <= 991 ) {
+        //jQuery('.col-shift-left-js').insertBefore('.col-shift-right-js');
+        jQuery('.col-shift-left-js').each(function() {
+            jQuery(this).parent('.row').find('.col-shift-right-js').insertAfter(this);
+        });  
+
+    } else {
+        // jQuery('.col-shift-right-js').insertBefore('.col-shift-left-js');
+        jQuery('.col-shift-right-js').each(function() {
+            jQuery(this).parent('.row').find('.col-shift-left-js').insertAfter(this);
+        });  
+    }
+}
 
 
-/* animate to top */
-$('.top').click(function () {$('body,html').animate({scrollTop: 0}, 800,'easeInOutExpo');
-      return false;
-});
+
+
+// $('.col-shift-right-js').each(function() {
+//     $(this).parent('.row').find('.col-shift-left-js').insertAfter(this);
+// });
+
+
+
 
 
 // stop droppdown to close on clicking inside of it // for example in case of signin dropdowns
 // $(document).on('click', '.dropdown-user', '.dropdown-menu', function (e) {
 //   e.stopPropagation();
 // });
-
 
 /*
 // stick header starts
@@ -111,7 +227,6 @@ $(window).scroll(function() {
 });
 // stick header ends
 */
-
 
 
 /*
@@ -134,65 +249,24 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
   $(this).find('.dropdown-menu').first().stop(true, true).slideUp("fast");
 });
 
-
 */
 
-// bootstrap accordian - toggle icons
-var selectIds = $('#collapseOne,#collapseTwo,#collapseThree,.panel-collapse');
-$(function ($) {
-    selectIds.on('show.bs.collapse hidden.bs.collapse', function () {
-        $(this).prev().find('.fa').toggleClass('fa-plus fa-minus');
-        $(this).prev().find('.icon').toggleClass('ion-ios-add ion-ios-remove');
-        $(this).prev().find('.icnc').toggleClass('ion-ios-add-circle-outline ion-ios-remove-circle-outline');
-    });
-});
-// bootstrap accordian - toggle icons
+  /*Collapsable*/
+  // $(".collapsable h3").on('click', function(event){
+  //   event.preventDefault();
+  //   $(this).closest('.collapsable').find('.collapse').stop().slideToggle('fast');
+  //   $(this).closest('.collapsable').find('.h3 span').stop().toggleClass('fa-angle-down fa-angle-up');
+  // });
 
-/////// Bootstrap Accordian FIX - move control to the top of opened tab - onclick - start
-$('#accordion').on('shown.bs.collapse', function (e) {
-
-  // Validate this panel belongs to this accordian, and not an embedded one
-  var actualAccordianId = $('a[href="#' + $(e.target).attr('id') + '"').data('parent');
-  var targetAccordianId = '#' + $(this).attr('id');
-  if (actualAccordianId !== targetAccordianId) return;
-
-  var clickedHeader = $(this).find('.panel > .collapse.in').closest('.panel').find('.panel-heading');
-  var offset = clickedHeader.offset();
-  var top = $(window).scrollTop();
-  if(offset) {
-    var topOfHeader = offset.top;
-    if(topOfHeader < top) {
-      $('html,body').animate({ scrollTop: topOfHeader}, 400, 'swing');
-    }
-  }
-});
-/////// Bootstrap Accordian FIX - move control to the top of opened tab - onclick - end
+  /*Categories Panel Collapsable*/
+  // $(".collapsable a").on('click', function(event){
+  //   event.preventDefault();
+  //   $(this).closest('.collapsable').find('.nav-tab-line').stop().slideToggle('fast');
+  //   $(this).closest('.collapsable').find('.check-circle span').stop().toggleClass('fa-angle-right fa-angle-down');
+  // });
 
 
 
 
 
-// window resize triggers //
 
-jQuery(window).resize(function() {
-    // shift columns trigger
-    shiftColsLeftRight();
-});
-
-// FUNCTIONS //
-
-// shift columns for small screen
-function shiftColsLeftRight() {
-    if( jQuery(window).width() <= 991 ) {
-        //jQuery('.col-shift-left-js').insertBefore('.col-shift-right-js');
-        jQuery('.col-shift-left-js').each(function() {
-            jQuery(this).parent('.row').find('.col-shift-right-js').insertAfter(this);
-        });  
-
-    } else {
-        // jQuery('.col-shift-right-js').insertBefore('.col-shift-left-js');
-        jQuery('.col-shift-right-js').each(function() {
-            jQuery(this).parent('.row').find('.col-shift-left-js').insertAfter(this);
-        });  
-    }
-}

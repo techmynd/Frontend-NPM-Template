@@ -9,9 +9,7 @@ $ease-in-out: all 0.3s ease-in-out;
 $ease--smooth-fade: cubic-bezier(.365,.005,.355,1);
 // transition: $ease--smooth-fade;
 
-/*
-	Easing/Timing
-*/
+// Easing/Timing
 
 // Cubic
 $ease--in-cubic: cubic-bezier(.55,.055,.675,.19);
@@ -55,7 +53,7 @@ $ease--in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
 
 
 /////////////////////////////////////////////////////////////////////////
-/*================ Animation related mixins ================*/
+// ================ Animation related mixins ================
 @mixin keyframes($name) {
   @-webkit-keyframes #{$name} {
     @content;
@@ -64,7 +62,7 @@ $ease--in-out-back: cubic-bezier(.68,-0.55,.265,1.55);
     @content;
   }
 }
-/*================ Animations and keyframes ================*/
+// ================ Animations and keyframes ================
 @include keyframes(spin) {
   0% {
     -webkit-transform: rotate(0deg);

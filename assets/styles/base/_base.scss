@@ -144,7 +144,7 @@ button:focus, .btn:focus, a:focus, input:focus, .form-control:focus {
   -o-transform: translateY(-50%);
 }
 
-/*vertically centered content in grid*/
+// vertically centered content in grid
 .row-flex, .center-middle {
   display: flex;
   flex-direction: row;
@@ -212,23 +212,23 @@ form {display: block; width: 100%;}
 .full-right-side {padding-right: 0;}
 .full-left-side {padding-left: 0;}
 
-/*#############################################*/
-/*responsive image boxes for grid - small grid*/
+// #############################################
+// responsive image boxes for grid - small grid
 .grid-img-box-sm {height:80px; line-height: 70px; display: flex; align-items: center; overflow:hidden; vertical-align:middle; text-align:center; background-color: #f4f4f4; border:1px solid #eee;}
 .grid-img-box-sm a {margin:0 auto !important; display:inline-block;}
 .grid-img-box-sm img {max-height:80px; margin: 0 auto !important; display: inline-block !important; max-width: 100%;}
-/*responsive image boxes for grid - medium grid*/
+// responsive image boxes for grid - medium grid
 .grid-img-box-md {height:160px; line-height: 150px; display: flex; align-items: center; overflow:hidden; vertical-align:middle; text-align:center; background-color: #f4f4f4; border:1px solid #eee;}
 .grid-img-box-md a {margin:0 auto !important; display:inline-block;}
 .grid-img-box-md img {max-height:160px; margin: 0 auto !important; display: inline-block !important; max-width: 100%;}
-/*responsive image boxes for grid - large grid*/
+// responsive image boxes for grid - large grid
 .grid-img-box-lg {height:500px; line-height: 490px; display: flex; align-items: center; overflow:hidden; vertical-align:middle; text-align:center; background-color: #f4f4f4; border:1px solid #eee;}
 .grid-img-box-lg a {margin:0 auto !important; display:inline-block;}
 .grid-img-box-lg img {max-height:500px; margin: 0 auto !important; display: inline-block !important; max-width: 100%;}
-/*responsive image boxes for grid - table method*/
+// responsive image boxes for grid - table method
 .grid-tbl {display: table; width:100%; overflow:hidden; text-align:center; background-color: #f4f4f4; border:1px solid #eee;}
 .grid-tbl-cell {display: table-cell; height:200px; line-height: 200px; vertical-align:middle; text-align:center;}
 .grid-tbl-cell a {margin:0 auto !important; display:inline-block;}
 .grid-tbl-cell img {max-height:200px; margin: 0 auto !important; display: inline-block !important; max-width: 100%;}
-/*#############################################*/
+// #############################################
 

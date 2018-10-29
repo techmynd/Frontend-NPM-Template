@@ -47,32 +47,29 @@ $full-width: 100%;
 // === COLORS ===
 // All colour variable names should come from http://chir.ag/projects/name-that-color/
 
-/*
-$orange: #ffa600; 
-$grey: #f3f3f3; 
-$blue: #82d2e5;
+// $orange: #ffa600; 
+// $grey: #f3f3f3; 
+// $blue: #82d2e5;
 
-$color-primary: $orange;
-$color-secondary: $blue;
-$color-tertiary: $grey;
+// $color-primary: $orange;
+// $color-secondary: $blue;
+// $color-tertiary: $grey;
 
-$link-primary: $orange;
-$link-secondary: $blue;
-$link-tertiary: $grey;
+// $link-primary: $orange;
+// $link-secondary: $blue;
+// $link-tertiary: $grey;
 
-$primary-color: #333;
-$primary-color-light: #666;
-$primary-color-dark: #000;
+// $primary-color: #333;
+// $primary-color-light: #666;
+// $primary-color-dark: #000;
 
-$secondary-color: #000;
-$secondary-color-light: #000;
-$secondary-color-dark: #000;
+// $secondary-color: #000;
+// $secondary-color-light: #000;
+// $secondary-color-dark: #000;
 
-$tertiary-color: #000;
-$tertiary-color-light: #000;
-$tertiary-color-dark: #000;
-
-*/
+// $tertiary-color: #000;
+// $tertiary-color-light: #000;
+// $tertiary-color-dark: #000;
 
 // brand colours
 $c--brand-primary: #ff585d;
@@ -102,17 +99,16 @@ $c--instagram: #8a3ab9;
 $box-shadow-black: 0 3rem 6rem rgba(0,0,0,0.1);
 $box-shadow-props: 0 3rem 6rem;
 
-/* usage
-.box {
-    box-shadow: $box-shadow-props rgba($primary-color, 0.1);
-}
-.box-2 {
-    box-shadow: 0 3rem 6rem rgba($primary-color, 0.1);
-}
-.box-3 {
-    box-shadow: $box-shadow-black;
-}
-*/
+// usage
+// .box {
+//     box-shadow: $box-shadow-props rgba($primary-color, 0.1);
+// }
+// .box-2 {
+//     box-shadow: 0 3rem 6rem rgba($primary-color, 0.1);
+// }
+// .box-3 {
+//     box-shadow: $box-shadow-black;
+// }
 
 $radius-button: 3px;
 $radius-tab: 3px;

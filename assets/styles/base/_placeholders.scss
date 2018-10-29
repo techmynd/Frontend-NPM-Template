@@ -25,12 +25,11 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
-/* usage
-.image-one {
-    @extend %bg-img;
-    background-image:url(../assets/images/img.jpg");
-}
-*/
+// == usage
+//.image-one {
+//    @extend %bg-img;
+//    background-image:url(../assets/images/img.jpg");
+//}
 
 %btn {
     padding: 10px 40px;
@@ -42,11 +41,10 @@
     text-align: center;
     display: inline-block;
 }
-/* usage
-.class { 
-	@extend %btn;
-}
-*/
+// == usage
+// .class { 
+// 	@extend %btn;
+// }
 
 %btn-placeholder {
 	color: #fff;
@@ -55,16 +53,17 @@
 	text-align: center;
 	border-radius: 100px;
 }
-/* usage
-.some-btn-main {
-		@extend %btn-placeholder;
-	&:link {
-		@extend %btn-placeholder;
-		background-color: $color-primary;
-	}
-	&:hover, &:focus {
-		@extend %btn-placeholder;
-		background-color: $color-secondary;
-	}	
-}
-*/
+
+// == usage
+// .some-btn-main {
+// 		@extend %btn-placeholder;
+// 	&:link {
+// 		@extend %btn-placeholder;
+// 		background-color: $color-primary;
+// 	}
+// 	&:hover, &:focus {
+// 		@extend %btn-placeholder;
+// 		background-color: $color-secondary;
+// 	}	
+// }
+
