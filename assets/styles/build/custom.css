@@ -1,10 +1,3 @@
-@import url(vendors/bootstrap-4.min.css);
-@import url(vendors/bootstrap-theme-4.min.css);
-@import url(vendors/fontawesome-all-5.min.css);
-@import url(vendors/ionicons.min.css);
-@import url(vendors/owl.carousel.min.css);
-@import url(vendors/owl.theme.default.min.css);
-@import url(vendors/animate.css);
 @import url("https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900|Open+Sans:300,400,600,700,800");
 .btn-main, .btn-main:link, .btn-main:hover, .btn-main:focus {
   color: #fff;
